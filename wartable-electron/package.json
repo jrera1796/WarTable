@@ -1,0 +1,21 @@
+{
+  "name": "wartable-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+  "start": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\"",
+  "server": "node server.js",
+  "client": "cd ../react-client && npm start",
+  "electron": "electron ."
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "electron": "^34.0.2",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

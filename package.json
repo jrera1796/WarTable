@@ -1,0 +1,15 @@
+{
+  "name": "wartable",
+  "version": "1.0.0",
+  "description": "A tactical D&D map tool for DM and players.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server --prefix wartable-electron\" \"npm run client --prefix wartable-client\" \"npm run electron --prefix wartable-electron\""
+  },
+  "author": "Jose Rivera",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
