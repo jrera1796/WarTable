@@ -6,7 +6,7 @@ const mapContainer = document.getElementById("map-container");
 
 // Initialize Konva Stage
 const stage = new Konva.Stage({
-    container: "container",
+    container: "map-container",
     width: mapContainer.clientWidth,
     height: mapContainer.clientHeight,
     draggable: true,

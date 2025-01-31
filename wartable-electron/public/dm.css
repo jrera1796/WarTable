@@ -1,0 +1,81 @@
+/* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#map-container-wrapper {
+  position: relative;
+}
+
+#map-container {
+  width: 800px;
+  height: 600px;
+  border: 8px solid black;
+  box-shadow: 0 0 5px white, 0 0 10px black;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Token Selector Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 600px;
+  height: 500px;
+  background: white;
+  border: 2px solid black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.popup.visible {
+  display: block;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.folder-list {
+  width: 30%;
+  height: 400px;
+  overflow-y: auto;
+  border-right: 2px solid black;
+  padding: 5px;
+  float: left;
+}
+
+.folder-btn {
+  width: 100%;;
+}
+
+.token-grid {
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+}
+
+.token {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.token:hover {
+  transform: scale(1.1);
+}

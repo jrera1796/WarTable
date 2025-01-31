@@ -4,31 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WarTable Command Center</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #controls {
-            margin-bottom: 10px;
-        }
-        #map-container {
-            width: 800px; /* Fixed map width */
-            height: 600px; /* Fixed map height */
-            border: 8px solid black; /* Thick black border */
-            box-shadow: 0 0 5px white, 0 0 10px black; /* White/Black/Black border effect */
-            overflow: hidden; /* Restrict overflow */
-            position: relative;
-        }
-        #container {
-            width: 100%; /* Full size of #map-container */
-            height: 100%; /* Full size of #map-container */
-        }
-    </style>
+    <link rel="stylesheet" href="./dm.css">
     <script src="https://cdn.jsdelivr.net/npm/konva@8.4.3/konva.min.js"></script>
 </head>
 <body>
@@ -40,9 +16,36 @@
         <input type="number" id="gridHeight" placeholder="e.g., 20" />
         <button id="generateGridButton">Generate Grid</button>
     </div>
-    <div id="map-container">
-        <div id="container"></div>
+
+    <div id="map-container-wrapper">
+        <div id="map-container"></div>
+
+        <div id="red-box">
+            <button class="button" id="openTokenSelector">Players</button>
+            <button class="button">Camera</button>
+            <button class="button">Edit</button>
+        </div>
+
+        <div id="green-box">
+            <button class="button">Fog 1</button>
+            <button class="button">Fog 2</button>
+            <button class="button">Fog 3</button>
+        </div>
     </div>
+
+    <!-- Token Selector Popup -->
+    <div id="token-selector-popup" class="popup">
+        <div class="popup-header">
+            <input type="text" id="searchInput" placeholder="Search Tokens...">
+            <button id="closeTokenSelector">Close</button>
+        </div>
+        <div class="popup-body">
+            <div id="folder-list" class="folder-list"></div>
+            <div id="token-grid" class="token-grid"></div>
+        </div>
+    </div>
+
     <script src="./dm.js"></script>
+    <script src="./tokenSelector.js"></script>
 </body>
 </html>
