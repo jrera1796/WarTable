@@ -1,3 +1,5 @@
-window.addEventListener("DOMContentLoaded", () => {
-  console.log("Electron preload loaded");
+const { contextBridge, ipcRenderer } = require("electron");
+
+contextBridge.exposeInMainWorld("electronAPI", {
+    uploadMap: () => ipcRenderer.invoke("upload-map")
 });

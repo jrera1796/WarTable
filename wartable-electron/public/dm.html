@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DM Interface</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarTable Command Center</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+    </style>
+     <script src="https://cdn.jsdelivr.net/npm/konva@8.4.3/konva.min.js"></script>
 </head>
 <body>
-    <h1>DM Control Panel</h1>
-    <p>Players will connect via WebSockets.</p>
+    <div id="controls">
+        <button id="uploadButton">Upload Map</button>
+        <label for="gridWidth">Width:</label>
+        <input type="number" id="gridWidth" placeholder="e.g., 35" />
+        <label for="gridHeight">Height:</label>
+        <input type="number" id="gridHeight" placeholder="e.g., 20" />
+        <button id="generateGridButton">Generate Grid</button>
+    </div>
+    <div id="container"></div>
+    <script src="./dm.js"></script>
 </body>
 </html>
